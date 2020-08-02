@@ -1,0 +1,86 @@
+{%extends "layout.html"%}
+{%block title%}{{title}}{%endblock%}
+{%block main%}
+<main>
+  <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <div class="row">
+          <div class="col-sm-12" id="co1">
+              <form action="{{url_for('home.home')}}" method="POST" class="text-center">
+                  <div class="form-group text-center">
+                    </div>
+                    <input type="text" class="form-control text-center" id="text" id="input" name="task" width="100px" placeholder="new task">
+                    <button type="submit" class="btn btn-primary text-center btn-md col-sm-12" id="b1">Add</button>
+                  </div>
+              </form>
+          </div>
+      </div>    
+    </div>
+    <div class="container">
+      <div class="row">
+        {%if allTasks%}
+          {%for task in allTasks%}
+            <div class="col-sm-4" id="co2">
+              <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Task</h5>
+                    <p class="card-text">{{task.content}}</p>
+                    <div class="co3">
+                    <a href="{{url_for('home.deleteFunction', id=task.id)}}" class="btn btn-success">Complate</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          {%endfor%}
+        {%else%}
+          <div class="col-sm-12" id="co2">
+            <div class="card text-center">
+              <div class="card-body">
+                  <p class="card-text">you have alot to do and you canont rembber its all, so add a task</p>
+              </div>
+            </div>
+          </div>
+        {%endif%}
+      </div>   
+      <h3 id="hedline" class="text-center">Completed</h3>
+      <hr>
+      {%if combltedTask%}
+        {%for task in combltedTask%}
+          <div class="col-sm-12" id="card">
+              <div class="card text-center">
+                  <div class="card-body">
+                    <p class="card-text">{{task.content}}</p>
+                  </div>
+              </div>
+          </div>
+        {%endfor%}
+      {%else%}
+        <div class="col-sm-12" id="co2">
+          <div class="card text-center">
+            <div class="card-body">
+                <p class="card-text">the completed tasks will show here</p>
+            </div>
+          </div>
+        </div>
+      {%endif%}
+    </div>
+  </div>
+</main>
+{%endblock%}

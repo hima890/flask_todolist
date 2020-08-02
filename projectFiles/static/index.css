@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+body{
+    background-color: #F1FAEE;
+    font-family: 'Comic Neue', cursive;
+  
+}
+
+
+
+.navbar{
+    background-color: #457B9D;
+    height: 5rem;
+}
+
+
+#co1{
+    margin-top: 1.6rem;
+}
+
+#text{
+    margin-left: 18%;
+    width: 65%;
+}
+
+#b1{
+    margin-top: 1rem;
+    width:  6rem;
+}
+
+#co2{
+    margin-top: 2rem;
+}
+
+.card{
+    box-shadow: -.8px .8px 2.5px;
+}
+
+#card{
+   
+    margin-bottom: 1rem;
+  
+}
+
+.co3{
+    margin-top: 2rem;
+}
+
+hr{
+    width: 60%;
+    border-top: 3px solid green;
+    border-top: 3px solid green;
+}
+
+#hedline{
+    margin-top: .6rem;
+}
+
+
+.footer{
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
