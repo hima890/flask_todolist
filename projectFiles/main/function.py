@@ -15,7 +15,6 @@ def check(newTask):
 
 def delete():
     tasks = Complated.query.all()
-    print(tasks)
     for task in tasks:
         taskTime = task.datePost.day
         if taskTime - timeNow >= 3:
