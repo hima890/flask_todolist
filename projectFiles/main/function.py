@@ -1,4 +1,4 @@
-# import all the packigs
+#importing all the packages
 from projectFiles.models import Task
 from projectFiles import db
 from projectFiles.models import Complated
@@ -6,7 +6,7 @@ from datetime import datetime
 
 timeNow = datetime.now().day
 
-# this function chick if the task allredy in the databas 
+#this function check if the task allready in the database 
 def check(newTask):
     result = Task.query.filter_by(content=newTask).first()
     if result:
