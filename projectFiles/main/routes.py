@@ -1,10 +1,10 @@
-# import all the packigs
+#importing all the packages
 from flask import Blueprint, redirect, render_template, url_for, request, flash, redirect
 from projectFiles.models import Task, Complated
 from projectFiles import db
 from projectFiles.main.function import check, delete
 
-# the main bluebrint
+# the main blueprint
 home_page = Blueprint('home', __name__,
     template_folder='templates',
     static_folder='static')
